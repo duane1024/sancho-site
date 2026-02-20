@@ -14,3 +14,7 @@ Then open: http://localhost:8080
 ## Deploy target
 
 Cloudflare Pages (production branch: `master`).
+
+## Optional: Cloudflare Web Analytics
+
+In Cloudflare dashboard for this site, enable Web Analytics and add the provided token/script in `index.html` before `</body>` if you want visitor metrics.

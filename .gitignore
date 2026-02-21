@@ -1,0 +1,10 @@
+# Cloudflare Wrangler local state
+cloudflare-worker/.wrangler/
+
+# Node deps if Wrangler/npm used locally
+cloudflare-worker/node_modules/
+
+# Local env/secrets
+cloudflare-worker/.dev.vars
+cloudflare-worker/.env
+cloudflare-worker/.env.*

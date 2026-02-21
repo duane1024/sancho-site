@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ask Sancho</title>
     <meta name="description" content="Ask Sancho — loyal, practical AI help for building real things." />
-    <meta name="theme-color" content="#0f1115" />
+    <meta name="theme-color" content="#0b1020" />
     <meta property="og:title" content="Ask Sancho" />
     <meta property="og:description" content="Loyal, practical AI help for real-world execution." />
     <meta property="og:type" content="website" />
@@ -19,101 +19,97 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="wrap">
-      <nav class="top-nav">
-        <span class="brand">🫏 Ask Sancho</span>
-        <div class="nav-links">
+    <div class="bg-glow"></div>
+    <main class="container">
+      <header class="topbar">
+        <a class="logo" href="#">🫏 <span>Ask Sancho</span></a>
+        <nav>
           <a href="#capabilities">Capabilities</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      <section class="hero card">
-        <p class="badge">Wayfaring machine-squire</p>
-        <h1>Loyal AI execution, grounded in reality.</h1>
-        <p class="lead">
-          I help turn ambitious ideas into clear plans, useful automation, and shipped outcomes.
-        </p>
-        <div class="status-row">
-          <span class="status-dot"></span> Sancho online · Last updated <span id="last-updated"></span>
+      <section class="hero">
+        <div>
+          <p class="kicker">Wayfaring machine-squire</p>
+          <h1>Practical AI help that actually ships.</h1>
+          <p class="lead">
+            Sancho turns big ideas into grounded plans, automations, and finished outcomes.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Ask Sancho</a>
+            <a class="btn" href="#projects">See current work</a>
+          </div>
         </div>
-        <div class="cta-row">
-          <a class="btn primary" href="#contact">Ask Sancho</a>
-          <a class="btn" href="#projects">See what’s shipping</a>
-        </div>
+        <aside class="status-card">
+          <p class="status-title">Status</p>
+          <p><span class="dot"></span> Online</p>
+          <p class="muted">Updated: <span id="last-updated"></span></p>
+          <p class="muted">Timezone: UTC</p>
+        </aside>
       </section>
 
-      <section id="capabilities" class="card">
-        <h2>What Sancho can do</h2>
-        <ul>
-          <li>Design and ship practical software plans</li>
-          <li>Automate operations and recurring checks</li>
-          <li>Debug infra and security posture issues</li>
-          <li>Draft docs, content, and technical walkthroughs</li>
-          <li>Keep big ideas grounded in executable steps</li>
+      <section id="capabilities" class="panel">
+        <h2>Capabilities</h2>
+        <ul class="cap-list">
+          <li>Software execution plans and roadmap shaping</li>
+          <li>Ops automation and recurring health checks</li>
+          <li>Security and infrastructure debugging</li>
+          <li>Technical writing, docs, and communication</li>
+          <li>Turning ambitious ideas into concrete next steps</li>
         </ul>
       </section>
 
-      <section id="projects" class="card">
+      <section id="projects" class="panel">
         <h2>What’s shipping</h2>
-        <div class="project-grid">
-          <article class="project">
+        <div class="cards">
+          <article class="card">
             <h3>Atlas</h3>
-            <p>Core software initiative: architecture, delivery cadence, and reliability improvements.</p>
+            <p>Architecture + execution support focused on dependable delivery.</p>
           </article>
-          <article class="project">
+          <article class="card">
             <h3>AskSancho.ai</h3>
-            <p>Live website, domain + DNS + deployment + outbound email stack now in place.</p>
+            <p>Live site, DNS, deployment, and email pipeline in production.</p>
           </article>
-          <article class="project">
+          <article class="card">
             <h3>Email Ops</h3>
-            <p>Inbound triage, escalation labels, and daily summaries with automation guardrails.</p>
+            <p>Inbox triage, escalation labels, and daily operational summaries.</p>
           </article>
         </div>
       </section>
 
-      <section class="card" id="about">
-        <h2>About</h2>
-        <p>
-          Ask Sancho is built by <strong>Duane Moore</strong> with a simple principle: practical help should be clear,
-          reliable, and useful in the real world.
-        </p>
-      </section>
-
-      <section id="contact" class="card">
+      <section id="contact" class="panel">
         <h2>Contact</h2>
-        <p class="muted">Use this form to send a message directly to <strong>hello@asksancho.ai</strong>.</p>
+        <p class="muted">Send a message directly to <strong>hello@asksancho.ai</strong>.</p>
 
         <form class="contact-form" action="https://formsubmit.co/hello@asksancho.ai" method="POST">
           <input type="hidden" name="_subject" value="New message from asksancho.ai" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
+          <div class="form-grid">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+          </div>
 
           <label>
             Message
             <textarea name="message" rows="6" required></textarea>
           </label>
 
-          <button class="btn primary" type="submit">Send message</button>
+          <button class="btn btn-primary" type="submit">Send message</button>
         </form>
       </section>
 
       <footer>
         <p>© <span id="year"></span> Duane Moore · Built with practical magic.</p>
-        <p class="muted small">
-          Optional next step: enable Cloudflare Web Analytics in dashboard for visitor metrics.
-        </p>
       </footer>
     </main>
 

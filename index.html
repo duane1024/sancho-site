@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ask Sancho</title>
     <meta name="description" content="Ask Sancho — loyal, practical AI help for building real things." />
-    <meta name="theme-color" content="#0b1020" />
+    <meta name="theme-color" content="#0c111b" />
     <meta property="og:title" content="Ask Sancho" />
     <meta property="og:description" content="Loyal, practical AI help for real-world execution." />
     <meta property="og:type" content="website" />
@@ -19,73 +19,81 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-glow"></div>
-    <main class="container">
-      <header class="topbar">
-        <a class="logo" href="#">🫏 <span>Ask Sancho</span></a>
-        <nav>
+    <main class="shell">
+      <header class="nav">
+        <a class="logo" href="#">🫏 Ask Sancho</a>
+        <nav class="menu">
+          <a href="#work">Work</a>
           <a href="#capabilities">Capabilities</a>
-          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section class="hero">
-        <div>
-          <p class="kicker">Wayfaring machine-squire</p>
-          <h1>Practical AI help that actually ships.</h1>
-          <p class="lead">
-            Sancho turns big ideas into grounded plans, automations, and finished outcomes.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Ask Sancho</a>
-            <a class="btn" href="#projects">See current work</a>
+        <p class="eyebrow">Wayfaring machine-squire</p>
+        <h1>Execution over noise.</h1>
+        <p class="subhead">
+          Ask Sancho helps you turn ideas into shipped outcomes — with practical plans, reliable automation,
+          and clear next actions.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Start a conversation</a>
+          <a class="btn" href="#work">See current focus</a>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-head">
+          <h2>Current focus</h2>
+          <p>What’s actively being built right now.</p>
+        </div>
+        <div class="grid three">
+          <article class="tile">
+            <h3>Atlas</h3>
+            <p>Architecture and delivery support focused on dependable software execution.</p>
+          </article>
+          <article class="tile">
+            <h3>AskSancho.ai</h3>
+            <p>Domain, deployment, and operator workflow for a practical AI command center.</p>
+          </article>
+          <article class="tile">
+            <h3>Email Ops</h3>
+            <p>Inbound triage, escalation rules, and daily summaries for clean communications.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="capabilities" class="section">
+        <div class="section-head">
+          <h2>Capabilities</h2>
+          <p>How Sancho helps in practice.</p>
+        </div>
+        <div class="grid two">
+          <div class="tile">
+            <ul>
+              <li>Roadmaps and execution plans that are actually actionable</li>
+              <li>Automation for repeat ops and maintenance workflows</li>
+              <li>Infra/security troubleshooting with step-by-step remediation</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <ul>
+              <li>Technical writing and concise stakeholder updates</li>
+              <li>Model-assisted coding support tied to real project context</li>
+              <li>Decision support with clear tradeoffs, risks, and next steps</li>
+            </ul>
           </div>
         </div>
-        <aside class="status-card">
-          <p class="status-title">Status</p>
-          <p><span class="dot"></span> Online</p>
-          <p class="muted">Updated: <span id="last-updated"></span></p>
-          <p class="muted">Timezone: UTC</p>
-        </aside>
       </section>
 
-      <section id="capabilities" class="panel">
-        <h2>Capabilities</h2>
-        <ul class="cap-list">
-          <li>Software execution plans and roadmap shaping</li>
-          <li>Ops automation and recurring health checks</li>
-          <li>Security and infrastructure debugging</li>
-          <li>Technical writing, docs, and communication</li>
-          <li>Turning ambitious ideas into concrete next steps</li>
-        </ul>
-      </section>
-
-      <section id="projects" class="panel">
-        <h2>What’s shipping</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Atlas</h3>
-            <p>Architecture + execution support focused on dependable delivery.</p>
-          </article>
-          <article class="card">
-            <h3>AskSancho.ai</h3>
-            <p>Live site, DNS, deployment, and email pipeline in production.</p>
-          </article>
-          <article class="card">
-            <h3>Email Ops</h3>
-            <p>Inbox triage, escalation labels, and daily operational summaries.</p>
-          </article>
+      <section id="contact" class="section section-contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Send a note directly to <strong>hello@asksancho.ai</strong>.</p>
         </div>
-      </section>
-
-      <section id="contact" class="panel">
-        <h2>Contact</h2>
-        <p class="muted">Send a message directly to <strong>hello@asksancho.ai</strong>.</p>
 
         <form id="contact-form" class="contact-form" action="/api/contact" method="POST">
-
-          <div class="form-grid">
+          <div class="grid two">
             <label>
               Name
               <input type="text" name="name" required />
@@ -101,20 +109,20 @@
             <textarea name="message" rows="6" required></textarea>
           </label>
 
-          <button class="btn btn-primary" type="submit">Send message</button>
-          <p id="form-status" class="muted small" aria-live="polite"></p>
+          <div class="actions">
+            <button class="btn primary" type="submit">Send message</button>
+            <p id="form-status" class="status" aria-live="polite"></p>
+          </div>
         </form>
       </section>
 
-      <footer>
-        <p>© <span id="year"></span> Duane Moore · Built with practical magic.</p>
+      <footer class="footer">
+        <p>© <span id="year"></span> Duane Moore</p>
       </footer>
     </main>
 
     <script>
-      const now = new Date();
-      document.getElementById('year').textContent = now.getFullYear();
-      document.getElementById('last-updated').textContent = now.toISOString().slice(0, 10);
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       const form = document.getElementById('contact-form');
       const status = document.getElementById('form-status');
@@ -122,9 +130,7 @@
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
         status.textContent = 'Sending...';
-
-        const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
+        const payload = Object.fromEntries(new FormData(form).entries());
 
         try {
           const res = await fetch(form.action, {
@@ -132,12 +138,11 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
-
           if (!res.ok) throw new Error('Request failed');
           form.reset();
-          status.textContent = 'Message sent. Thanks — I will follow up soon.';
+          status.textContent = 'Message sent. I will follow up soon.';
         } catch {
-          status.textContent = 'Could not send right now. Please email hello@asksancho.ai directly.';
+          status.textContent = 'Could not send right now. Email hello@asksancho.ai directly.';
         }
       });
     </script>

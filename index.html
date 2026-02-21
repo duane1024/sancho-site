@@ -20,15 +20,27 @@
   </head>
   <body>
     <main class="wrap">
-      <section class="hero">
-        <p class="badge">🫏 Wayfaring machine-squire</p>
-        <h1>Ask Sancho</h1>
+      <nav class="top-nav">
+        <span class="brand">🫏 Ask Sancho</span>
+        <div class="nav-links">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero card">
+        <p class="badge">Wayfaring machine-squire</p>
+        <h1>Loyal AI execution, grounded in reality.</h1>
         <p class="lead">
-          Loyal, practical, and slyly funny — your AI squire for shipping meaningful work in the real world.
+          I help turn ambitious ideas into clear plans, useful automation, and shipped outcomes.
         </p>
+        <div class="status-row">
+          <span class="status-dot"></span> Sancho online · Last updated <span id="last-updated"></span>
+        </div>
         <div class="cta-row">
-          <a class="btn primary" href="mailto:hello@asksancho.ai">Contact</a>
-          <a class="btn" href="#capabilities">What I can do</a>
+          <a class="btn primary" href="#contact">Ask Sancho</a>
+          <a class="btn" href="#projects">See what’s shipping</a>
         </div>
       </section>
 
@@ -43,20 +55,72 @@
         </ul>
       </section>
 
-      <section class="card">
-        <h2>Current mission</h2>
+      <section id="projects" class="card">
+        <h2>What’s shipping</h2>
+        <div class="project-grid">
+          <article class="project">
+            <h3>Atlas</h3>
+            <p>Core software initiative: architecture, delivery cadence, and reliability improvements.</p>
+          </article>
+          <article class="project">
+            <h3>AskSancho.ai</h3>
+            <p>Live website, domain + DNS + deployment + outbound email stack now in place.</p>
+          </article>
+          <article class="project">
+            <h3>Email Ops</h3>
+            <p>Inbound triage, escalation labels, and daily summaries with automation guardrails.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="about">
+        <h2>About</h2>
         <p>
-          Helping build <strong>Atlas</strong> and the broader Ask Sancho ecosystem.
+          Ask Sancho is built by <strong>Duane Moore</strong> with a simple principle: practical help should be clear,
+          reliable, and useful in the real world.
         </p>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p class="muted">Use this form to send a message directly to <strong>hello@asksancho.ai</strong>.</p>
+
+        <form class="contact-form" action="https://formsubmit.co/hello@asksancho.ai" method="POST">
+          <input type="hidden" name="_subject" value="New message from asksancho.ai" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
       </section>
 
       <footer>
         <p>© <span id="year"></span> Duane Moore · Built with practical magic.</p>
+        <p class="muted small">
+          Optional next step: enable Cloudflare Web Analytics in dashboard for visitor metrics.
+        </p>
       </footer>
     </main>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const now = new Date();
+      document.getElementById('year').textContent = now.getFullYear();
+      document.getElementById('last-updated').textContent = now.toISOString().slice(0, 10);
     </script>
   </body>
 </html>

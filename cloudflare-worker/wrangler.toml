@@ -1,8 +1,8 @@
 name = "asksancho-contact"
 main = "contact-worker.js"
 compatibility_date = "2026-02-21"
+compatibility_flags = ["nodejs_compat"]
 
-# After deploy, add a route for your domain in Cloudflare dashboard:
 # Route: asksancho.ai/api/contact
 # Zone: asksancho.ai
 

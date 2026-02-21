@@ -192,6 +192,8 @@ input, textarea {
 
 textarea { resize: vertical; }
 
+#form-status { min-height: 1.2em; }
+
 footer {
   margin-top: 20px;
   color: var(--muted);

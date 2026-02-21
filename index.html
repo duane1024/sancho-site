@@ -83,10 +83,7 @@
         <h2>Contact</h2>
         <p class="muted">Send a message directly to <strong>hello@asksancho.ai</strong>.</p>
 
-        <form class="contact-form" action="https://formsubmit.co/hello@asksancho.ai" method="POST">
-          <input type="hidden" name="_subject" value="New message from asksancho.ai" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+        <form id="contact-form" class="contact-form" action="/api/contact" method="POST">
 
           <div class="form-grid">
             <label>
@@ -105,6 +102,7 @@
           </label>
 
           <button class="btn btn-primary" type="submit">Send message</button>
+          <p id="form-status" class="muted small" aria-live="polite"></p>
         </form>
       </section>
 
@@ -117,6 +115,31 @@
       const now = new Date();
       document.getElementById('year').textContent = now.getFullYear();
       document.getElementById('last-updated').textContent = now.toISOString().slice(0, 10);
+
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = 'Sending...';
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          if (!res.ok) throw new Error('Request failed');
+          form.reset();
+          status.textContent = 'Message sent. Thanks — I will follow up soon.';
+        } catch {
+          status.textContent = 'Could not send right now. Please email hello@asksancho.ai directly.';
+        }
+      });
     </script>
   </body>
 </html>

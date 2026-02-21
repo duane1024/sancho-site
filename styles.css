@@ -24,9 +24,9 @@ body {
 }
 
 .shell {
-  width: min(980px, 92vw);
+  max-width: 980px;
   margin: 0 auto;
-  padding: 28px 0 72px;
+  padding: 28px 20px 72px;
 }
 
 .nav {

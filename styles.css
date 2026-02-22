@@ -99,10 +99,10 @@ body {
 
 .sancho-art figcaption {
   margin: 0;
-  padding: 10px 12px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.4;
+  padding: 8px 12px 10px;
+  color: rgba(166, 179, 207, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.35;
 }
 
 .eyebrow {

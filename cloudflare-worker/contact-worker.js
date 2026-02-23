@@ -44,7 +44,7 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: env.RESEND_FROM || "hello@asksancho.ai",
+          from: env.RESEND_FROM || "Sancho AI <hello@asksancho.ai>",
           to: [env.CONTACT_TO || "hello@asksancho.ai"],
           reply_to: email,
           subject: `New contact form message from ${name}`,

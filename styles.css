@@ -78,11 +78,12 @@ body {
   box-shadow: var(--shadow);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 20px;
-  align-items: start;
+.hero-content {
+  margin-top: 20px;
+}
+
+.hero-banner {
+  margin-bottom: 6px;
 }
 
 .sancho-art {
@@ -96,7 +97,7 @@ body {
 .sancho-art img {
   width: 100%;
   display: block;
-  max-height: 360px;
+  max-height: 300px;
   object-fit: cover;
 }
 
@@ -243,8 +244,7 @@ textarea { resize: vertical; }
 
 @media (max-width: 860px) {
   .grid.three,
-  .grid.two,
-  .hero-grid { grid-template-columns: 1fr; }
+  .grid.two { grid-template-columns: 1fr; }
 
   .nav {
     flex-direction: column;
@@ -254,4 +254,5 @@ textarea { resize: vertical; }
 
   .hero { padding: 28px 20px; }
   .menu { gap: 8px; flex-wrap: wrap; }
+  .sancho-art img { max-height: 220px; }
 }

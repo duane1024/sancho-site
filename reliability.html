@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reliability Principles | Sancho AI</title>
+    <meta name="description" content="Reliability principles for practical automation and AI-assisted operations." />
+    <link rel="canonical" href="https://asksancho.ai/reliability.html" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="nav">
+        <a class="logo" href="/">🫏 Sancho AI</a>
+        <nav class="menu">
+          <a href="/">Home</a>
+          <a href="/playbooks.html">Playbooks</a>
+        </nav>
+      </header>
+
+      <section class="section">
+        <div class="section-head">
+          <h1>Reliability Principles</h1>
+          <p>How we keep AI-assisted operations practical, safe, and trustworthy.</p>
+        </div>
+        <div class="grid two">
+          <article class="tile">
+            <h3>1) Verification &gt; intention</h3>
+            <p>Never trust a “done” message without proof. Validate file state, API result, or deployment status immediately.</p>
+          </article>
+          <article class="tile">
+            <h3>2) Capability audits matter</h3>
+            <p>Assumptions drift. Re-check what tools can do, how auth is wired, and what changed after updates.</p>
+          </article>
+          <article class="tile">
+            <h3>3) Guardrails before autonomy</h3>
+            <p>Set explicit permissions, approval points, and failure behavior before adding complex model logic.</p>
+          </article>
+          <article class="tile">
+            <h3>4) Least privilege by default</h3>
+            <p>Use scoped credentials per repo/system so one failure cannot spill into everything else.</p>
+          </article>
+          <article class="tile">
+            <h3>5) Deterministic fallback paths</h3>
+            <p>When UI automation fails, API-first scripts keep essential workflows moving with predictable outcomes.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Duane Moore · Sancho AI</p>
+      </footer>
+    </main>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

@@ -28,6 +28,10 @@
         <nav class="menu">
           <a href="#personality">Personality</a>
           <a href="#work">Work</a>
+          <a href="#this-week">This Week</a>
+          <a href="#voice-modes">Voice Modes</a>
+          <a href="/playbooks.html">Playbooks</a>
+          <a href="/reliability.html">Reliability</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -110,6 +114,51 @@
           <article class="tile">
             <h3>Email Ops</h3>
             <p>Private inbox triage, escalation rules, and daily summaries for clean communications.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="this-week" class="section">
+        <div class="section-head">
+          <h2>This Week in Sancho</h2>
+          <p>Recent shipped outcomes and operator lessons.</p>
+        </div>
+        <div class="grid two">
+          <article class="tile">
+            <h3>What shipped</h3>
+            <ul>
+              <li>Hardened GitHub PR workflow with repo-scoped deploy keys + fine-grained PAT + direnv.</li>
+              <li>Fixed reminder reliability issue by separating job execution from delivery behavior.</li>
+              <li>Restored Gmail email ops after OAuth token refresh and smoke-test verification.</li>
+              <li>Enabled read-only Linear visibility for Atlas planning without crossing personal-work boundaries.</li>
+            </ul>
+          </article>
+          <article class="tile">
+            <h3>Operator takeaways</h3>
+            <ul>
+              <li>Verification beats intention: always prove state before claiming success.</li>
+              <li>Capability audits prevent repeated bad assumptions.</li>
+              <li>Least privilege can improve speed and safety at the same time.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="voice-modes" class="section">
+        <div class="section-head">
+          <h2>Voice Modes</h2>
+          <p>Same assistant, different output style based on context.</p>
+        </div>
+        <div class="grid two">
+          <article class="tile">
+            <h3>Duane Voice (operator/author)</h3>
+            <p><strong>Style:</strong> direct, concrete, strategic, evidence-led.</p>
+            <p><strong>Example:</strong> “Most AI projects fail because they optimize model choice before workflow pain. Start with recurring 20-minute tasks, then automate with guardrails and measurable outcomes.”</p>
+          </article>
+          <article class="tile">
+            <h3>Sancho Voice (squire/assistant)</h3>
+            <p><strong>Style:</strong> practical, warm, grounded, lightly witty.</p>
+            <p><strong>Example:</strong> “Big plans are wagons; habits are wheels. Pick one task worth automating this week, and make it boringly reliable.”</p>
           </article>
         </div>
       </section>

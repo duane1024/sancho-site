@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playbooks | Sancho AI</title>
+    <meta name="description" content="Practical playbooks for secure GitHub workflows, reliable reminders, and automation fallbacks." />
+    <link rel="canonical" href="https://asksancho.ai/playbooks.html" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="nav">
+        <a class="logo" href="/">🫏 Sancho AI</a>
+        <nav class="menu">
+          <a href="/">Home</a>
+          <a href="/reliability.html">Reliability</a>
+        </nav>
+      </header>
+
+      <section class="section">
+        <div class="section-head">
+          <h1>Playbooks</h1>
+          <p>Copyable patterns for real operator workflows.</p>
+        </div>
+        <div class="grid two">
+          <article class="tile">
+            <h3>GitHub least-privilege shipping</h3>
+            <ul>
+              <li>Use repo-scoped SSH deploy keys for <code>git push</code>.</li>
+              <li>Use fine-grained PATs for PR operations only.</li>
+              <li>Load repo-specific <code>GH_TOKEN</code> with direnv.</li>
+              <li>Prefer PR-first with branch protections enabled.</li>
+            </ul>
+          </article>
+
+          <article class="tile">
+            <h3>Cron reminders that actually deliver</h3>
+            <ul>
+              <li>Treat <em>execution</em> and <em>delivery</em> as separate checks.</li>
+              <li>Use announce delivery for user-facing reminders.</li>
+              <li>Include context in reminder text (what/why/next action).</li>
+              <li>Alert on silent-success conditions.</li>
+            </ul>
+          </article>
+
+          <article class="tile">
+            <h3>Browser relay vs API fallback</h3>
+            <ul>
+              <li>Use browser relay for UI-only actions.</li>
+              <li>Keep API scripts as deterministic fallback for critical ops.</li>
+              <li>Run preflight checks before retries.</li>
+              <li>Log outcomes and error classes for fast diagnosis.</li>
+            </ul>
+          </article>
+
+          <article class="tile">
+            <h3>Operator checklist</h3>
+            <ul>
+              <li>Define success signal before automating.</li>
+              <li>Set permission boundaries first.</li>
+              <li>Validate outputs immediately after each run.</li>
+              <li>Document fixes in memory to prevent regressions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Duane Moore · Sancho AI</p>
+      </footer>
+    </main>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

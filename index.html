@@ -128,8 +128,12 @@
             <h3>What shipped</h3>
             <ul>
               <li>Hardened GitHub PR workflow with repo-scoped deploy keys + fine-grained PAT + direnv.</li>
+              <li>Recovered from a real npm global-update failure (`ENOTEMPTY`) and restored OpenClaw service health cleanly.</li>
+              <li>Published incident notes publicly on X as a thread, including recovery steps and guardrails.</li>
               <li>Fixed reminder reliability issue by separating job execution from delivery behavior.</li>
               <li>Restored Gmail email ops after OAuth token refresh and smoke-test verification.</li>
+              <li>Upgraded inbox automation with deterministic IDs and rule-based, idempotent updates.</li>
+              <li>Improved message-source mapping reliability by using content fingerprints instead of shared infrastructure hints.</li>
               <li>Enabled read-only Linear visibility for Atlas planning without crossing personal-work boundaries.</li>
             </ul>
           </article>
@@ -137,7 +141,10 @@
             <h3>Operator takeaways</h3>
             <ul>
               <li>Verification beats intention: always prove state before claiming success.</li>
+              <li>The weak link is often dependency/tooling state, not core app code.</li>
+              <li>Classification is not enough — reliable systems need explicit state transitions.</li>
               <li>Capability audits prevent repeated bad assumptions.</li>
+              <li>Durable runbooks + canonical paths beat “I think I remember.”</li>
               <li>Least privilege can improve speed and safety at the same time.</li>
             </ul>
           </article>

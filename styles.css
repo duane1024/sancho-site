@@ -214,6 +214,16 @@ h1 {
   max-width: 64ch;
   color: var(--text);
 }
+.note-date {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--sand) !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
 .tile a { color: var(--brand); }
 .focus-link {
   display: inline-flex;
